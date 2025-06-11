@@ -1,0 +1,32 @@
+# Import libraries
+import pandas as pd
+from transformers import pipeline
+import matplotlib.pyplot as plt
+import seaborn as sns
+import os
+os.environ["PYTORCH_CUDA_ALLOC_CONF"] = ""
+
+
+# Load dataset
+df = pd.read_csv('dataset.csv')
+
+# Initialize sentiment analysis pipeline
+classifier = pipeline('sentiment-analysis', model='distilbert-base-uncased-finetuned-sst-2-english')
+
+# Perform sentiment analysis
+df['sentiment'] = df['feedback'].apply(lambda x: classifier(x)[0]['label'])
+df['score'] = df['feedback'].apply(lambda x: classifier(x)[0]['score'])
+
+# Map sentiment labels to categories
+df['sentiment'] = df['sentiment'].map({'POSITIVE': 'Positive', 'NEGATIVE': 'Negative'})
+
+# Display results
+print(df)
+
+# Visualize results
+plt.figure(figsize=(8, 5))
+sns.countplot(x='sentiment', data=df, palette='viridis')
+plt.title('Sentiment Distribution of Feedback')
+plt.xlabel('Sentiment')
+plt.ylabel('Count')
+plt.show()
