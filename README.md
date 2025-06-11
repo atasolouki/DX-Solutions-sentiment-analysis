@@ -23,7 +23,7 @@ A FastAPI-based sentiment analysis service that uses the DistilBERT model to ana
 
 1. Clone the repository:
 ```bash
-git clone [<repository-url>](https://github.com/atasolouki/DX-Solutions-sentiment-analysis.git)
+git clone https://github.com/atasolouki/DX-Solutions-sentiment-analysis.git
 cd DX-Solutions-sentiment-analysis
 ```
 
