@@ -108,15 +108,3 @@ print(response.json())
 Access the interactive API documentation at:
 - Swagger UI: http://localhost:8000/docs
 - ReDoc: http://localhost:8000/redoc
-
-## 📁 Project Structure
-
-```
-DX-Solutions-task/
-├── api.py              # Main FastAPI application
-├── requirements.txt    # Project dependencies
-├── Dockerfile         # Docker configuration
-├── .dockerignore      # Docker ignore rules
-└── README.md          # Project documentation
-```
-
