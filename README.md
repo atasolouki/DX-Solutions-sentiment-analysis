@@ -45,7 +45,7 @@ pip install -r requirements.txt
 uvicorn api:app --reload
 ```
 
-The API will be available at `http://localhost:8000/docs`
+The API will be available at `http://localhost:8000`
 
 ### 🐳 Docker Setup
 
