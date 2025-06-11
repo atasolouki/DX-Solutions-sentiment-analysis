@@ -70,14 +70,14 @@ POST /analyze
 #### Request Body
 ```json
 {
-    "text": "Your feedback text here"
+    "text": "This app is great!"
 }
 ```
 
 #### Response
 ```json
 {
-    "feedback": "Your feedback text here",
+    "feedback": "This app is great!",
     "sentiment": "POSITIVE",
     "score": 0.9998
 }
